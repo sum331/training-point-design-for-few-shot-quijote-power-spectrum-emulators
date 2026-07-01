@@ -1,0 +1,145 @@
+project_root: ../..
+data_root: data
+random_seed: 20260604
+
+target:
+  kind: cdm_logdiff
+  anchor_mode: camb_cdm_hmcode2020
+  power_eps: 1.0e-12
+
+parameter_space:
+  name: quijote_csstA_matched_box_k001_3
+  theta_names:
+    - Omega_m
+    - Omega_b
+    - h
+    - n_s
+    - A
+  theta_bounds:
+    Omega_m: [0.24, 0.40]
+    Omega_b: [0.04, 0.06]
+    h: [0.60, 0.80]
+    n_s: [0.92, 1.00]
+    A: [1.7, 2.5]
+
+k_grid:
+  source: npz
+  path: data/source_data/raw_bank/artifacts/quijote/cache/quijote_bsq_z0_bank.npz
+  key: k_bins
+  k_min: 0.01
+  k_max: 3.0
+  expected_count: 475
+  bands:
+    - {name: low, k_min: 0.01, k_max: 0.07}
+    - {name: mid, k_min: 0.07, k_max: 0.5}
+    - {name: focus_high, k_min: 0.5, k_max: 1.0}
+    - {name: tail, k_min: 1.0, k_max: 3.0}
+
+resources:
+  use_lofi: false
+  runtime_root: .
+  truth_generator:
+    kind: z2_direct_logpk_truth_generator
+    path: data/source_data/v2_quijote/artifacts/quijote/gp_surrogates/quijote_bsq_z0_full_directlogpk_truth_generator.pkl
+    device: auto
+    chunk_size: 256
+  r2_seed:
+    mode: geometry_only
+    path: data/ppr_tuning/quijote32_biasfield_repulsion_shape_fixed_strength_20260624/02_broad_repulsion_length_scale/repulsion_length_scale_0p08/blend_lambda_1/lofi_design.npz
+    theta_key: theta_unit
+    manifest_path:
+  current_active:
+    enabled: false
+    path:
+    theta_key: theta_raw
+  raw_bank:
+    enabled: false
+    path: data/source_data/raw_bank/artifacts/quijote/cache/quijote_bsq_z0_bank.npz
+    metadata_path: data/source_data/raw_bank/artifacts/quijote/cache/quijote_bsq_z0_bank.json
+    sample_size: 256
+    sample_seed: 20260604
+    filter_to_parameter_box: false
+
+fastmock_bias:
+  enabled: true
+  provider: csst
+  vendor_path: vendor/csstemu_official_full
+  checkbound: true
+  fixed_w: -1.0
+  fixed_wa: 0.0
+  fixed_mnu: 0.0
+  reference_as: 2.1e-9
+  bias_weight: 1.1
+  bias_band_weights: [0.4, 1.25, 1.35, 1.25]
+  normalization: p68
+  normalization_probe_count: 128
+  cache_decimals: 10
+  truth_backend: cuda_torch
+  truth_dtype: float32
+  truth_device: auto
+  truth_chunk_size: 7168
+
+splits:
+  seed_label: ppr32_biasfield_seed
+  probe_size: 256
+  pool_size: 8192
+  audit_size: 256
+  audit_source: npz
+  audit_path: data/runs/diagnostics/sobol64_lhs256_quijote_bias_20260624T035426Z/lhs256_validation_points.npz
+  audit_theta_unit_key: theta_unit
+  audit_theta_raw_key: theta_raw
+  sobol64_size: 64
+  sobol128_size: 128
+  sobol_tail_size: 64
+  duplicate_decimals: 12
+  output_dir: manifests
+
+model:
+  pca_components: 16
+  gp_alpha: 1.0e-8
+  gp_n_restarts_optimizer: 0
+  normalize_y: true
+  length_scale_initial: 0.25
+  length_scale_bounds: [0.01, 20.0]
+  constant_value: 1.0
+  constant_value_bounds: [0.01, 100.0]
+
+active_learning:
+  candidate_source: m3
+  active_points: 32
+  sobol_tail_reserve: 0
+  batch_size: 1
+  preselect_factor: 8
+  probe_error_percentile: 68.0
+  probe_hotspot_weight: 0.90
+  probe_hotspot_percentile: 90.0
+  uncertainty_weight: 0.05
+  train_distance_weight: -0.20
+  boundary_risk_weight: 0.30
+  alc_imse_weight: 0.55
+  alc_probe_weight_floor: 0.05
+  pca_band_weights: [0.30, 1.35, 1.30, 1.05]
+  pca_weight_function: smooth_logk_curve
+  pca_weight_transition_dex: 0.10
+  pca_component_weight_min: 0.25
+  pca_component_weight_max: 4.0
+  pca_component_weight_normalize: true
+  diversity_weight: 0.08
+  reduction_probe_anchors: 32
+  reduction_length_scale: 0.12
+  boundary_guard_threshold: 0.08
+  boundary_fraction_cap: 0.15
+  continuous_initial_draws: 4096
+  continuous_hotspot_jitter_draws: 1024
+  continuous_restarts: 24
+  continuous_local_maxiter: 35
+  continuous_duplicate_distance_threshold: 1.0e-4
+
+evaluation:
+  primary_metric: overall_relative_error.p68
+  primary_curve: kwise_p68_relative_error
+  report_metric_policy: p68_only
+  band_edges: [0.07, 0.5, 1.0]
+  band_labels: [low, mid, focus_high, tail]
+  output_dir: runs
+  save_predictions: false

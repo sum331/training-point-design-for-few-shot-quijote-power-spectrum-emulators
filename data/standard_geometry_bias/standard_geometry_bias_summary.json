@@ -1,0 +1,160 @@
+{
+  "created_at_utc": "2026-06-27T10:43:52.078365+00:00",
+  "experiment": "standard_geometry_bias_field_extended",
+  "config_path": "<PROJECT_ROOT>\\versions\\z2quijote\\config.yaml",
+  "target_kind": "cdm_logdiff",
+  "anchor_mode": "camb_cdm_hmcode2020",
+  "bias_truth_source": "csst_residual",
+  "training_target_kind": "csst_fastmock_official_log_residual",
+  "k_count": 475,
+  "k_min": 0.01507912203669548,
+  "k_max": 2.993929147720337,
+  "parameter_space": {
+    "name": "quijote_csstA_matched_box_k001_3",
+    "theta_names": [
+      "Omega_m",
+      "Omega_b",
+      "h",
+      "n_s",
+      "A"
+    ],
+    "theta_bounds": [
+      [
+        0.24,
+        0.4
+      ],
+      [
+        0.04,
+        0.06
+      ],
+      [
+        0.6,
+        0.8
+      ],
+      [
+        0.92,
+        1.0
+      ],
+      [
+        1.7,
+        2.5
+      ]
+    ]
+  },
+  "reference_size": 32768,
+  "design_size": 64,
+  "design_count": 900,
+  "tau_lambda": 0.16,
+  "source_info": {
+    "source_run_dir": "data\\standard_geometry_bias\\bias_m16384_n64_s600_tau016_accepted_only_20260624T154008",
+    "source_bias_statistics_reused": false,
+    "source_bias_statistics_reuse_note": "The source run can define the reference/design prefix only. Bias statistics are recomputed under the current config/k-grid.",
+    "bias_truth_source": "csst_residual",
+    "training_target_kind": "csst_fastmock_official_log_residual",
+    "reference_prefix": {
+      "checked": true,
+      "source_count": 16384,
+      "target_count": 32768,
+      "prefix_equal": true
+    },
+    "design_prefix": {
+      "checked": true,
+      "source_count": 600,
+      "target_count": 900,
+      "prefix_equal": true
+    }
+  },
+  "geometry": {
+    "reference_size": 32768,
+    "design_count": 900,
+    "accepted_total": 780665,
+    "inside_total": 4773775,
+    "accepted_pair_fraction": 0.026471116807725695,
+    "inside_pair_fraction": 0.1618711683485243,
+    "accepted_count_quantiles": {
+      "q00": 0.0,
+      "q10": 0.0,
+      "q25": 0.0,
+      "q50": 0.0,
+      "q75": 19.0,
+      "q90": 109.0,
+      "q95": 137.0,
+      "q99": 162.0,
+      "q100": 211.0
+    },
+    "inside_count_quantiles": {
+      "q00": 0.0,
+      "q10": 0.0,
+      "q25": 0.0,
+      "q50": 12.0,
+      "q75": 220.0,
+      "q90": 573.0,
+      "q95": 655.0,
+      "q99": 719.3299999999981,
+      "q100": 813.0
+    },
+    "nonzero_accepted_fraction": 0.406951904296875,
+    "ge10_accepted_fraction": 0.285125732421875,
+    "ge20_accepted_fraction": 0.249664306640625,
+    "thresholds": {
+      "tau_lambda": 0.16,
+      "h_min": 0.3903509184060011,
+      "h_max": 0.5265704600502662,
+      "kappa_max": 24.573921112709805,
+      "boundary_min": 0.02
+    },
+    "parameters": {
+      "reference_size": 32768,
+      "design_size": 64,
+      "design_count": 900,
+      "tau_lambda": 0.16,
+      "sampler": "mixed"
+    }
+  },
+  "bias_evaluation": {
+    "mode": "accepted_center_points_only",
+    "truth_source": "csst_residual",
+    "training_target_kind": "csst_fastmock_official_log_residual",
+    "reference_support_size": 13335,
+    "observed_pair_count": 780665,
+    "zero_acceptance_reference_count": 19433
+  },
+  "bias_estimate": {
+    "usable_min_count": 10,
+    "high_confidence_min_count": 20,
+    "usable_fraction": 0.285125732421875,
+    "high_confidence_fraction": 0.249664306640625,
+    "finite_bias_fraction": 0.406951904296875,
+    "accepted_count_quantiles": {
+      "q00": 0.0,
+      "q10": 0.0,
+      "q25": 0.0,
+      "q50": 0.0,
+      "q75": 19.0,
+      "q90": 109.0,
+      "q95": 137.0,
+      "q99": 162.0,
+      "q100": 211.0
+    },
+    "bias_mean_quantiles": {
+      "q00": 4.494787502611342e-05,
+      "q10": 0.00029837951431565824,
+      "q25": 0.00034460519343336806,
+      "q50": 0.0004032517342200797,
+      "q75": 0.0004852103889777485,
+      "q90": 0.0005887087386843047,
+      "q95": 0.0006686789194425314,
+      "q99": 0.0009591047984159308,
+      "q100": 0.0021898637189653237
+    }
+  },
+  "artifacts": {
+    "bias_field": "data\\standard_geometry_bias\\bias_m32768_n64_s900_tau016_k475_20260627T164634\\standard_geometry_bias_field.npz",
+    "density_field": "data\\standard_geometry_bias\\bias_m32768_n64_s900_tau016_k475_20260627T164634\\density_field.npz",
+    "interpolator_support": "data\\standard_geometry_bias\\bias_m32768_n64_s900_tau016_k475_20260627T164634\\interpolator_support.npz",
+    "bias_accumulator_state": "data\\standard_geometry_bias\\bias_m32768_n64_s900_tau016_k475_20260627T164634\\bias_accumulator_state.npz",
+    "accepted_indices_by_design": "data\\standard_geometry_bias\\bias_m32768_n64_s900_tau016_k475_20260627T164634\\accepted_indices_by_design.npz",
+    "reference_truth": "data\\standard_geometry_bias\\bias_m32768_n64_s900_tau016_k475_20260627T164634\\accepted_reference_truth_csst_residual_log.npz"
+  },
+  "reference_digest": "5f4c6c1192ce03a76c09526f212b8a8c564e8a54817518032c7051dd4e13e8d1"
+}

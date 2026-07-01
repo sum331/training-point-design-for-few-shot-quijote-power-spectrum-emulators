@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Key hyperparameters used for the reported PPR and active-learning results.}
+\label{tab:hyperparameters}
+\begin{tabular}{p{0.29\linewidth}p{0.63\linewidth}}
+\toprule
+Item & Specification \\
+\midrule
+Residual PCA-GP & \(n_{\rm PC}=16\), GP \(\alpha=10^{-8}\), normalized targets, length-scale initial value \(0.25\), bounds \([0.01,20]\), no optimizer restarts. \\
+Standard-geometry bias field & \(M=32768\) reference points, \(N=64\) points per auxiliary design, \(S=900\) auxiliary designs, \(\tau_\lambda=0.16\). \\
+Bias-field support & finite support \(c\geq1\): 13335 points; usable support \(c\geq10\): 9343 points; high-confidence threshold \(c\geq20\). \\
+Bias interpolation & reliability-weighted local interpolation with \(K=96\), fallback \(K=160\), length scale \(\ell=0.18\), usable count threshold \(c\geq10\). \\
+PPR particles & 32 particles, Sobol initialization, jitter 0.002, \(\Delta t=0.04\), damping 0.86, 40--160 steps, convergence tolerance \(5\times10^{-5}\). \\
+PPR potential mapping & rank-body mapping enabled with \(q=0.68\), width \(0.36\), floor \(0.25\), mix \(0.65\), gain \(1.0\), power \(1.0\), force cap \(0.045\). \\
+PPR repulsion & strength 0.018, length scale 0.159, softening 0.04875, nearest neighbors 23, force cap 0.035; adaptive power 1.02 and minimum multiplier 0.375. \\
+PPR boundary force & margin 0.06, strength 0.08, force cap 0.09, hard-clip margin fraction 0.75. \\
+Active-learning budget & 32 sequential single-point additions after PPR32; one new Quijote point is selected per round. \\
+Variance-bias score & \(S(x)=\{[U(x)/s_U]^2+[\lambda B(x)/s_B]^2\}^{1/2}\), \(\lambda=1.1\), p68 normalization, 128 probe points. \\
+\(k\)-band weights & variance weights \((0.30,1.35,1.30,1.05)\); bias weights \((0.40,1.25,1.35,1.25)\) for low, mid, focus-high, and tail bands. \\
+KUN bias proxy & KUN fastmock uses the same training point distribution and PCA-GP flow; fixed parameters \(w=-1\), \(w_a=0\), \(m_\nu=0\), reference \(A_s=2.1\times10^{-9}\). \\
+M3 simplex search & stage-0 CUDA chunk 6144; stage-QMC keeps the top 25\% of simplices with 4096 QMC points per simplex and CUDA chunk 7168; polish keeps top 3\%, uses 48 starts and 256 iterations. \\
+\bottomrule
+\end{tabular}
+\end{table}

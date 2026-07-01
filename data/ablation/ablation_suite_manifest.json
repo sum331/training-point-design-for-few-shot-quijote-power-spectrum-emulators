@@ -1,0 +1,115 @@
+{
+  "created_at_utc": "2026-07-01T09:26:11.217481+00:00",
+  "purpose": "MNRAS mechanism-attribution ablation suite",
+  "condition_order": [
+    "sobol32",
+    "ppr32",
+    "sobol64",
+    "ppr32_plus_sobol32",
+    "ppr32_plus_variance_only_al32",
+    "ppr32_plus_bias_only_al32",
+    "ppr32_plus_variance_bias_al32",
+    "sobol32_plus_variance_bias_al32"
+  ],
+  "config_path": "<PROJECT_ROOT>\\versions\\z2quijote\\config_ppr3_64.yaml",
+  "config_summary": {
+    "config_path": "<PROJECT_ROOT>\\versions\\z2quijote\\config_ppr3_64.yaml",
+    "project_root": "<PROJECT_ROOT>",
+    "data_root": "data",
+    "target": {
+      "kind": "cdm_logdiff",
+      "anchor_mode": "camb_cdm_hmcode2020",
+      "power_eps": 1e-12
+    },
+    "oracle_kind": "z2_truth_generator",
+    "truth_generator_path": "data\\source_data\\v2_quijote\\artifacts\\quijote\\gp_surrogates\\quijote_bsq_z0_full_directlogpk_truth_generator.pkl",
+    "r2_seed_mode": "geometry_only",
+    "r2_seed_path": "data\\ppr_tuning\\z2_ppr32_center_tuning_newfield_20260627T200839\\10_adaptive_ppr_repulsion_shape_r03_nearest_neighbors_i001_s2\\nearest_neighbors_23\\blend_lambda_1\\lofi_design.npz",
+    "use_lofi": false,
+    "raw_bank": {
+      "enabled": false,
+      "path": "data\\source_data\\raw_bank\\artifacts\\quijote\\cache\\quijote_bsq_z0_bank.npz",
+      "sample_size": 256
+    },
+    "fastmock_bias": {
+      "enabled": true,
+      "provider": "csst",
+      "score_mode": "variance_bias",
+      "vendor_path": "<PROJECT_ROOT>\\versions\\z2quijote\\vendor\\csstemu_official_full",
+      "checkbound": true,
+      "fixed_w": -1.0,
+      "fixed_wa": 0.0,
+      "fixed_mnu": 0.0,
+      "bias_weight": 1.1,
+      "bias_band_weights": [
+        0.4,
+        1.25,
+        1.35,
+        1.25
+      ],
+      "normalization": "p68",
+      "normalization_probe_count": 128,
+      "truth_backend": "cuda_torch",
+      "truth_dtype": "float32",
+      "truth_device": "auto",
+      "truth_chunk_size": 7168
+    },
+    "active_learning": {
+      "candidate_source": "m3",
+      "active_points": 32,
+      "sobol_tail_reserve": 0,
+      "batch_size": 1,
+      "alc_imse_weight": 0.55,
+      "pca_band_weights": [
+        0.3,
+        1.35,
+        1.3,
+        1.05
+      ],
+      "pca_weight_function": "smooth_logk_curve",
+      "pca_weight_transition_dex": 0.1
+    },
+    "evaluation": {
+      "primary_metric": "overall_relative_error.p68",
+      "primary_curve": "kwise_p68_relative_error",
+      "report_metric_policy": "p68_only",
+      "reported_quantile": 68.0,
+      "band_edges": [
+        0.07,
+        0.5,
+        1.0
+      ],
+      "band_labels": [
+        "low",
+        "mid",
+        "focus_high",
+        "tail"
+      ]
+    },
+    "k_count": 475,
+    "split_sizes": {
+      "probe": 256,
+      "pool": 8192,
+      "audit": 256,
+      "sobol64": 64,
+      "sobol128": 128,
+      "sobol_tail": 64
+    },
+    "audit_source": {
+      "source": "npz",
+      "path": "data\\runs\\diagnostics\\sobol64_lhs256_quijote_bias_20260624T035426Z\\lhs256_validation_points.npz",
+      "theta_unit_key": "theta_unit",
+      "theta_raw_key": "theta_raw"
+    }
+  },
+  "base_run_dir": "data\\runs\\z2_cdm_logdiff_20260628T084451Z",
+  "base_summary_path": "data\\runs\\z2_cdm_logdiff_20260628T084451Z\\z2_cdm_logdiff_fair_comparison_summary.json",
+  "split_manifest": "data\\manifests\\z2_direct_cdm_ppr32_biasfield_ppr3_seed_20260628T084451Z.json",
+  "validation_protocol": {
+    "audit_source": "npz",
+    "audit_path": "data\\runs\\diagnostics\\sobol64_lhs256_quijote_bias_20260624T035426Z\\lhs256_validation_points.npz",
+    "audit_size": 256,
+    "k_count": 475,
+    "primary_metric": "overall_relative_error.p68"
+  }
+}

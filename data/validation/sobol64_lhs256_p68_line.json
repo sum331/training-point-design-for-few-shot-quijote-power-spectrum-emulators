@@ -1,0 +1,24 @@
+{
+  "output_path": "data\\runs\\diagnostics\\sobol64_lhs256_quijote_bias_20260624T035426Z\\sobol64_lhs256_p68_line.png",
+  "curve_npz_path": "data\\runs\\diagnostics\\sobol64_lhs256_quijote_bias_20260624T035426Z\\sobol64_lhs256_p68_line.npz",
+  "primary_metric": "overall_relative_error.p68",
+  "primary_curve": "kwise_p68_relative_error",
+  "report_metric_policy": "p68_only",
+  "overall_p68_relative_error": 0.011823211344505547,
+  "band_p68_relative_error": {
+    "low": 0.010805487566399093,
+    "mid": 0.011202712555564135,
+    "focus_high": 0.012987035868416066,
+    "tail": 0.011925885617938423
+  },
+  "overall_line_p68_mean": 0.01182009587744532,
+  "line_min": 0.008438704969547461,
+  "line_max": 0.013254249368780214,
+  "auxiliary_metrics_excluded_from_report": [
+    "p50",
+    "p95",
+    "mean",
+    "max",
+    "signed_bias"
+  ]
+}

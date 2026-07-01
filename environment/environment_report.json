@@ -1,0 +1,21 @@
+{
+  "created_at_utc": "2026-07-01T18:15:04.702797+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "package_versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.8.0",
+    "torch": "2.9.1+cu126",
+    "matplotlib": "3.10.8",
+    "pandas": "2.3.3",
+    "PyYAML": "6.0.3",
+    "camb": "1.6.5",
+    "h5py": "not_installed",
+    "python-docx": "1.2.0",
+    "Pillow": "12.2.0"
+  },
+  "anchor_generation_protocol": "CAMB CDM nonlinear spectrum; see anchor_generation_protocol.md",
+  "gp_pca_implementation": "scikit-learn PCA and GaussianProcessRegressor wrappers in code/src/z2quijote/runtime_core",
+  "cuda_note": "CUDA is optional for fast KUN bias evaluation; CPU paths remain available for small audits."
+}

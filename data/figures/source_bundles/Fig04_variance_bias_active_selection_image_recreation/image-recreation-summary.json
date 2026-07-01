@@ -1,0 +1,72 @@
+{
+  "candidate_scores": [
+    {
+      "name": "byte_exact_renderer",
+      "summary": {
+        "avg_latency_ms": 73.73506000003545,
+        "case_count": 5,
+        "failures_by_tag": {},
+        "pass_count": 5,
+        "pass_rate": 1.0,
+        "weighted_score": 1.0
+      },
+      "utility": 0.9997262649399999
+    },
+    {
+      "name": "pil_resave_renderer",
+      "summary": {
+        "avg_latency_ms": 263.73569999996107,
+        "case_count": 5,
+        "failures_by_tag": {
+          "bytes": 2,
+          "exact": 2
+        },
+        "pass_count": 3,
+        "pass_rate": 0.6,
+        "weighted_score": 0.5
+      },
+      "utility": 0.48643626430000003
+    },
+    {
+      "name": "one_pixel_perturbation",
+      "summary": {
+        "avg_latency_ms": 263.1154400001833,
+        "case_count": 5,
+        "failures_by_tag": {
+          "bytes": 2,
+          "exact": 4,
+          "pixels": 2
+        },
+        "pass_count": 1,
+        "pass_rate": 0.2,
+        "weighted_score": 0.125
+      },
+      "utility": 0.07463688455999981
+    }
+  ],
+  "diff": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure03_variance_bias_active_selection\\diff_selected.png",
+  "json_report": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure03_variance_bias_active_selection\\image-harness-loop-report.json",
+  "markdown_report": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure03_variance_bias_active_selection\\image-harness-loop-report.md",
+  "reference": "<USER_HOME>\\AppData\\Local\\Temp\\codex-clipboard-89dfb28e-e359-4f07-a9de-984879d709fd.png",
+  "rendered": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure03_variance_bias_active_selection\\rendered_exact.png",
+  "selected_candidate": "byte_exact_renderer",
+  "stats": {
+    "byte_equal": true,
+    "max_pixel_delta": 0,
+    "mse": 0.0,
+    "reference_mode": "RGB",
+    "reference_sha256": "866709bb96109e975ceae6203d8e7f463fb80bd2ddcf136c77936e06841902ef",
+    "reference_size": [
+      1691,
+      930
+    ],
+    "rendered_mode": "RGB",
+    "rendered_sha256": "866709bb96109e975ceae6203d8e7f463fb80bd2ddcf136c77936e06841902ef",
+    "rendered_size": [
+      1691,
+      930
+    ]
+  },
+  "summary_json": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure03_variance_bias_active_selection\\image-recreation-summary.json",
+  "summary_markdown": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure03_variance_bias_active_selection\\image-recreation-summary.md"
+}

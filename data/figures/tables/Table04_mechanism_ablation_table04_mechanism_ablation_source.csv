@@ -1,0 +1,9 @@
+group,condition,design,n_train,initial_design,acquisition,overall_p68,overall_mean,overall_p95,delta_primary,delta_full_vs_this,contrast,inference
+Cold start,sobol32,Sobol32,32,sobol32,fixed,0.02261,0.03043,0.14299,reference,+34.09%,Sobol32 baseline,space-filling reference for 32-point designs
+Cold start,ppr32,PPR32,32,ppr32,PPR only,0.02125,0.03091,0.11560,+6.01% vs Sobol32,+29.88%,PPR cold start vs Sobol32,bias-prior relaxation improves the initial design
+64-point baseline,sobol64,Sobol64,64,sobol64,fixed,0.01904,0.02057,0.07420,reference,+21.74%,Sobol64 baseline,main 64-point space-filling reference
+64-point control,ppr32_plus_sobol32,PPR32 + Sobol32,64,ppr32,neutral fill,0.01913,0.02011,0.06208,-0.46% vs Sobol64,+22.10%,PPR plus neutral Sobol fill,cold start alone does not explain the final gain
+AL component,ppr32_plus_variance_only_al32,PPR32 + variance-only AL32,64,ppr32,variance only,0.01930,0.02285,0.08761,-1.39% vs Sobol64,+22.81%,variance-only AL after PPR,posterior variance alone is not sufficient
+AL component,ppr32_plus_bias_only_al32,PPR32 + bias-only AL32,64,ppr32,bias only,0.01778,0.02040,0.07966,+6.60% vs Sobol64,+16.20%,bias-only AL after PPR,KUN bias proxy adds useful difficult-region signal
+Full method,ppr32_plus_variance_bias_al32,PPR32 + variance-bias AL32,64,ppr32,variance + bias,0.01490,0.01737,0.06837,+21.74% vs Sobol64,,variance-bias AL after PPR,lowest error; variance and bias are complementary
+Initial-condition control,sobol32_plus_variance_bias_al32,Sobol32 + variance-bias AL32,64,sobol32,variance + bias,0.01986,0.02105,0.07585,-4.29% vs Sobol64,+24.96%,variance-bias AL after Sobol32,same acquisition without PPR does not recover the gain

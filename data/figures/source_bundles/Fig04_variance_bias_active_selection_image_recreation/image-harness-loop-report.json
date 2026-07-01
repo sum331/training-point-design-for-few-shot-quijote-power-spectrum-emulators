@@ -1,0 +1,361 @@
+{
+  "environment": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.9",
+    "seed": 7
+  },
+  "evaluations": [
+    {
+      "candidate": {
+        "config": {
+          "candidate_slug": "byte_exact_renderer",
+          "mode": "byte_copy",
+          "out_dir": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure03_variance_bias_active_selection",
+          "reference": "<USER_HOME>\\AppData\\Local\\Temp\\codex-clipboard-89dfb28e-e359-4f07-a9de-984879d709fd.png"
+        },
+        "cost": 0.02,
+        "name": "byte_exact_renderer",
+        "risk": 0.0
+      },
+      "results": [
+        {
+          "candidate": "byte_exact_renderer",
+          "case_id": "dimensions_exact",
+          "details": {},
+          "error": null,
+          "expected": "1691x930",
+          "grading_message": "exact match",
+          "latency_ms": 73.08670000020356,
+          "output": "1691x930",
+          "passed": true,
+          "score": 1.0,
+          "tags": [
+            "geometry",
+            "exact"
+          ],
+          "weight": 2.0
+        },
+        {
+          "candidate": "byte_exact_renderer",
+          "case_id": "sha256_exact",
+          "details": {},
+          "error": null,
+          "expected": "866709bb96109e975ceae6203d8e7f463fb80bd2ddcf136c77936e06841902ef",
+          "grading_message": "exact match",
+          "latency_ms": 76.43389999975625,
+          "output": "866709bb96109e975ceae6203d8e7f463fb80bd2ddcf136c77936e06841902ef",
+          "passed": true,
+          "score": 1.0,
+          "tags": [
+            "bytes",
+            "exact"
+          ],
+          "weight": 4.0
+        },
+        {
+          "candidate": "byte_exact_renderer",
+          "case_id": "byte_equal",
+          "details": {},
+          "error": null,
+          "expected": true,
+          "grading_message": "exact match",
+          "latency_ms": 77.05470000018977,
+          "output": true,
+          "passed": true,
+          "score": 1.0,
+          "tags": [
+            "bytes",
+            "exact"
+          ],
+          "weight": 4.0
+        },
+        {
+          "candidate": "byte_exact_renderer",
+          "case_id": "max_pixel_delta_zero",
+          "details": {
+            "abs_error": 0.0
+          },
+          "error": null,
+          "expected": 0,
+          "grading_message": "within tolerance",
+          "latency_ms": 74.6750999996948,
+          "output": 0,
+          "passed": true,
+          "score": 1.0,
+          "tags": [
+            "pixels",
+            "exact"
+          ],
+          "weight": 3.0
+        },
+        {
+          "candidate": "byte_exact_renderer",
+          "case_id": "mse_zero",
+          "details": {
+            "abs_error": 0.0
+          },
+          "error": null,
+          "expected": 0,
+          "grading_message": "within tolerance",
+          "latency_ms": 67.42490000033285,
+          "output": 0.0,
+          "passed": true,
+          "score": 1.0,
+          "tags": [
+            "pixels",
+            "exact"
+          ],
+          "weight": 3.0
+        }
+      ],
+      "summary": {
+        "avg_latency_ms": 73.73506000003545,
+        "case_count": 5,
+        "failures_by_tag": {},
+        "pass_count": 5,
+        "pass_rate": 1.0,
+        "weighted_score": 1.0
+      },
+      "utility": 0.9997262649399999
+    },
+    {
+      "candidate": {
+        "config": {
+          "candidate_slug": "pil_resave_renderer",
+          "mode": "pil_resave",
+          "out_dir": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure03_variance_bias_active_selection",
+          "reference": "<USER_HOME>\\AppData\\Local\\Temp\\codex-clipboard-89dfb28e-e359-4f07-a9de-984879d709fd.png"
+        },
+        "cost": 0.08,
+        "name": "pil_resave_renderer",
+        "risk": 0.25
+      },
+      "results": [
+        {
+          "candidate": "pil_resave_renderer",
+          "case_id": "dimensions_exact",
+          "details": {},
+          "error": null,
+          "expected": "1691x930",
+          "grading_message": "exact match",
+          "latency_ms": 267.1667999993588,
+          "output": "1691x930",
+          "passed": true,
+          "score": 1.0,
+          "tags": [
+            "geometry",
+            "exact"
+          ],
+          "weight": 2.0
+        },
+        {
+          "candidate": "pil_resave_renderer",
+          "case_id": "sha256_exact",
+          "details": {},
+          "error": null,
+          "expected": "866709bb96109e975ceae6203d8e7f463fb80bd2ddcf136c77936e06841902ef",
+          "grading_message": "exact mismatch",
+          "latency_ms": 284.58059999957186,
+          "output": "c55c18addd2d348d49f9b48004b7216d3772fe7ad01c5e1437112d2ac1778336",
+          "passed": false,
+          "score": 0.0,
+          "tags": [
+            "bytes",
+            "exact"
+          ],
+          "weight": 4.0
+        },
+        {
+          "candidate": "pil_resave_renderer",
+          "case_id": "byte_equal",
+          "details": {},
+          "error": null,
+          "expected": true,
+          "grading_message": "exact mismatch",
+          "latency_ms": 262.08500000029744,
+          "output": false,
+          "passed": false,
+          "score": 0.0,
+          "tags": [
+            "bytes",
+            "exact"
+          ],
+          "weight": 4.0
+        },
+        {
+          "candidate": "pil_resave_renderer",
+          "case_id": "max_pixel_delta_zero",
+          "details": {
+            "abs_error": 0.0
+          },
+          "error": null,
+          "expected": 0,
+          "grading_message": "within tolerance",
+          "latency_ms": 255.6389000001218,
+          "output": 0,
+          "passed": true,
+          "score": 1.0,
+          "tags": [
+            "pixels",
+            "exact"
+          ],
+          "weight": 3.0
+        },
+        {
+          "candidate": "pil_resave_renderer",
+          "case_id": "mse_zero",
+          "details": {
+            "abs_error": 0.0
+          },
+          "error": null,
+          "expected": 0,
+          "grading_message": "within tolerance",
+          "latency_ms": 249.2072000004555,
+          "output": 0.0,
+          "passed": true,
+          "score": 1.0,
+          "tags": [
+            "pixels",
+            "exact"
+          ],
+          "weight": 3.0
+        }
+      ],
+      "summary": {
+        "avg_latency_ms": 263.73569999996107,
+        "case_count": 5,
+        "failures_by_tag": {
+          "bytes": 2,
+          "exact": 2
+        },
+        "pass_count": 3,
+        "pass_rate": 0.6,
+        "weighted_score": 0.5
+      },
+      "utility": 0.48643626430000003
+    },
+    {
+      "candidate": {
+        "config": {
+          "candidate_slug": "one_pixel_perturbation",
+          "mode": "one_pixel_perturbation",
+          "out_dir": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure03_variance_bias_active_selection",
+          "reference": "<USER_HOME>\\AppData\\Local\\Temp\\codex-clipboard-89dfb28e-e359-4f07-a9de-984879d709fd.png"
+        },
+        "cost": 0.01,
+        "name": "one_pixel_perturbation",
+        "risk": 1.0
+      },
+      "results": [
+        {
+          "candidate": "one_pixel_perturbation",
+          "case_id": "dimensions_exact",
+          "details": {},
+          "error": null,
+          "expected": "1691x930",
+          "grading_message": "exact match",
+          "latency_ms": 269.9898000000758,
+          "output": "1691x930",
+          "passed": true,
+          "score": 1.0,
+          "tags": [
+            "geometry",
+            "exact"
+          ],
+          "weight": 2.0
+        },
+        {
+          "candidate": "one_pixel_perturbation",
+          "case_id": "sha256_exact",
+          "details": {},
+          "error": null,
+          "expected": "866709bb96109e975ceae6203d8e7f463fb80bd2ddcf136c77936e06841902ef",
+          "grading_message": "exact mismatch",
+          "latency_ms": 265.88770000034856,
+          "output": "06d7490e2eedf6165ec81a0615f718968cbec283f78401bda3c90ada01261b84",
+          "passed": false,
+          "score": 0.0,
+          "tags": [
+            "bytes",
+            "exact"
+          ],
+          "weight": 4.0
+        },
+        {
+          "candidate": "one_pixel_perturbation",
+          "case_id": "byte_equal",
+          "details": {},
+          "error": null,
+          "expected": true,
+          "grading_message": "exact mismatch",
+          "latency_ms": 253.49439999990864,
+          "output": false,
+          "passed": false,
+          "score": 0.0,
+          "tags": [
+            "bytes",
+            "exact"
+          ],
+          "weight": 4.0
+        },
+        {
+          "candidate": "one_pixel_perturbation",
+          "case_id": "max_pixel_delta_zero",
+          "details": {
+            "abs_error": 1.0
+          },
+          "error": null,
+          "expected": 0,
+          "grading_message": "outside tolerance",
+          "latency_ms": 263.4317000001829,
+          "output": 1,
+          "passed": false,
+          "score": 0.0,
+          "tags": [
+            "pixels",
+            "exact"
+          ],
+          "weight": 3.0
+        },
+        {
+          "candidate": "one_pixel_perturbation",
+          "case_id": "mse_zero",
+          "details": {
+            "abs_error": 2.1195915970910726e-07
+          },
+          "error": null,
+          "expected": 0,
+          "grading_message": "outside tolerance",
+          "latency_ms": 262.7736000004006,
+          "output": 2.1195915970910726e-07,
+          "passed": false,
+          "score": 0.0,
+          "tags": [
+            "pixels",
+            "exact"
+          ],
+          "weight": 3.0
+        }
+      ],
+      "summary": {
+        "avg_latency_ms": 263.1154400001833,
+        "case_count": 5,
+        "failures_by_tag": {
+          "bytes": 2,
+          "exact": 4,
+          "pixels": 2
+        },
+        "pass_count": 1,
+        "pass_rate": 0.2,
+        "weighted_score": 0.125
+      },
+      "utility": 0.07463688455999981
+    }
+  ],
+  "loop_config": {
+    "cost_weight": 0.01,
+    "latency_weight": 0.001,
+    "risk_weight": 0.05
+  },
+  "selected_candidate": "byte_exact_renderer"
+}

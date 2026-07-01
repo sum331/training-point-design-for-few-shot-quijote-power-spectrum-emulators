@@ -1,0 +1,25 @@
+\begin{table*}
+\centering
+\footnotesize
+\caption{Mechanism ablation under the fixed Quijote LHS256 validation protocol. Positive \(\Delta p68\) means a lower overall \(p68\) relative error than the stated reference.}
+\label{tab:mechanism_ablation}
+\begin{tabularx}{\textwidth}{p{0.14\textwidth}p{0.20\textwidth}cccp{0.19\textwidth}Xp{0.22\textwidth}}
+\toprule
+Component & Design & \(N_{\rm train}\) & Acquisition & \(p68\) & \(\Delta p68\) & Controlled contrast & Interpretation \\
+\midrule
+Cold start & Sobol32 & 32 & fixed & 0.02261 & reference & Sobol32 baseline & space-filling reference for 32-point designs \\
+Cold start & PPR32 & 32 & PPR only & 0.02125 & +6.01\% vs Sobol32 & PPR cold start vs Sobol32 & bias-prior relaxation improves the initial design \\
+\addlinespace[2pt]
+64-point baseline & Sobol64 & 64 & fixed & 0.01904 & reference & Sobol64 baseline & main 64-point space-filling reference \\
+\addlinespace[2pt]
+64-point control & PPR32 + Sobol32 & 64 & neutral fill & 0.01913 & -0.46\% vs Sobol64 & PPR plus neutral Sobol fill & cold start alone does not explain the final gain \\
+\addlinespace[2pt]
+AL component & PPR32 + variance-only AL32 & 64 & variance only & 0.01930 & -1.39\% vs Sobol64 & variance-only AL after PPR & posterior variance alone is not sufficient \\
+AL component & PPR32 + bias-only AL32 & 64 & bias only & 0.01778 & +6.60\% vs Sobol64 & bias-only AL after PPR & KUN bias proxy adds useful difficult-region signal \\
+\addlinespace[2pt]
+Full method & \textbf{PPR32 + variance-bias AL32} & 64 & variance + bias & \textbf{0.01490} & +21.74\% vs Sobol64 & variance-bias AL after PPR & lowest error; variance and bias are complementary \\
+\addlinespace[2pt]
+Initial-condition control & Sobol32 + variance-bias AL32 & 64 & variance + bias & 0.01986 & -4.29\% vs Sobol64 & variance-bias AL after Sobol32 & same acquisition without PPR does not recover the gain \\
+\bottomrule
+\end{tabularx}
+\end{table*}

@@ -1,0 +1,72 @@
+{
+  "candidate_scores": [
+    {
+      "name": "byte_exact_renderer",
+      "summary": {
+        "avg_latency_ms": 74.29670000019541,
+        "case_count": 5,
+        "failures_by_tag": {},
+        "pass_count": 5,
+        "pass_rate": 1.0,
+        "weighted_score": 1.0
+      },
+      "utility": 0.9997257032999999
+    },
+    {
+      "name": "pil_resave_renderer",
+      "summary": {
+        "avg_latency_ms": 252.7555399999983,
+        "case_count": 5,
+        "failures_by_tag": {
+          "bytes": 2,
+          "exact": 2
+        },
+        "pass_count": 3,
+        "pass_rate": 0.6,
+        "weighted_score": 0.5
+      },
+      "utility": 0.48644724446
+    },
+    {
+      "name": "one_pixel_perturbation",
+      "summary": {
+        "avg_latency_ms": 250.54180000006454,
+        "case_count": 5,
+        "failures_by_tag": {
+          "bytes": 2,
+          "exact": 4,
+          "pixels": 2
+        },
+        "pass_count": 1,
+        "pass_rate": 0.2,
+        "weighted_score": 0.125
+      },
+      "utility": 0.07464945819999994
+    }
+  ],
+  "diff": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure02_ppr_cold_start\\diff_selected.png",
+  "json_report": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure02_ppr_cold_start\\image-harness-loop-report.json",
+  "markdown_report": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure02_ppr_cold_start\\image-harness-loop-report.md",
+  "reference": "<USER_HOME>\\AppData\\Local\\Temp\\codex-clipboard-9041e564-5c9d-4326-a964-326701f18674.png",
+  "rendered": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure02_ppr_cold_start\\rendered_exact.png",
+  "selected_candidate": "byte_exact_renderer",
+  "stats": {
+    "byte_equal": true,
+    "max_pixel_delta": 0,
+    "mse": 0.0,
+    "reference_mode": "RGB",
+    "reference_sha256": "68ed6f0e11d6f7114741725553a39673bbf6889cf808068cee3590af5822d40f",
+    "reference_size": [
+      1820,
+      864
+    ],
+    "rendered_mode": "RGB",
+    "rendered_sha256": "68ed6f0e11d6f7114741725553a39673bbf6889cf808068cee3590af5822d40f",
+    "rendered_size": [
+      1820,
+      864
+    ]
+  },
+  "summary_json": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure02_ppr_cold_start\\image-recreation-summary.json",
+  "summary_markdown": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure02_ppr_cold_start\\image-recreation-summary.md"
+}

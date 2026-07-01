@@ -1,0 +1,72 @@
+{
+  "candidate_scores": [
+    {
+      "name": "byte_exact_renderer",
+      "summary": {
+        "avg_latency_ms": 76.56606000000465,
+        "case_count": 5,
+        "failures_by_tag": {},
+        "pass_count": 5,
+        "pass_rate": 1.0,
+        "weighted_score": 1.0
+      },
+      "utility": 0.9997234339400001
+    },
+    {
+      "name": "pil_resave_renderer",
+      "summary": {
+        "avg_latency_ms": 242.24840000006225,
+        "case_count": 5,
+        "failures_by_tag": {
+          "bytes": 2,
+          "exact": 2
+        },
+        "pass_count": 3,
+        "pass_rate": 0.6,
+        "weighted_score": 0.5
+      },
+      "utility": 0.4864577515999999
+    },
+    {
+      "name": "one_pixel_perturbation",
+      "summary": {
+        "avg_latency_ms": 225.52193999990777,
+        "case_count": 5,
+        "failures_by_tag": {
+          "bytes": 2,
+          "exact": 4,
+          "pixels": 2
+        },
+        "pass_count": 1,
+        "pass_rate": 0.2,
+        "weighted_score": 0.125
+      },
+      "utility": 0.07467447806000009
+    }
+  ],
+  "diff": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\diff_selected.png",
+  "json_report": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\image-harness-loop-report.json",
+  "markdown_report": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\image-harness-loop-report.md",
+  "reference": "<USER_HOME>\\.codex\\attachments\\c6faae97-b0aa-4d0b-be6d-4a7fa22a4b1f\\image-1.png",
+  "rendered": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\rendered_exact.png",
+  "selected_candidate": "byte_exact_renderer",
+  "stats": {
+    "byte_equal": true,
+    "max_pixel_delta": 0,
+    "mse": 0.0,
+    "reference_mode": "RGB",
+    "reference_sha256": "b3d8fb4d2b9da11f3217d3e2da8e198ecbc7a42519cc1b4d7681596aa8e387ba",
+    "reference_size": [
+      1692,
+      929
+    ],
+    "rendered_mode": "RGB",
+    "rendered_sha256": "b3d8fb4d2b9da11f3217d3e2da8e198ecbc7a42519cc1b4d7681596aa8e387ba",
+    "rendered_size": [
+      1692,
+      929
+    ]
+  },
+  "summary_json": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\image-recreation-summary.json",
+  "summary_markdown": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\image-recreation-summary.md"
+}

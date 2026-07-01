@@ -1,0 +1,72 @@
+{
+  "candidate_scores": [
+    {
+      "name": "byte_exact_renderer",
+      "summary": {
+        "avg_latency_ms": 73.17404000004899,
+        "case_count": 5,
+        "failures_by_tag": {},
+        "pass_count": 5,
+        "pass_rate": 1.0,
+        "weighted_score": 1.0
+      },
+      "utility": 0.99972682596
+    },
+    {
+      "name": "pil_resave_renderer",
+      "summary": {
+        "avg_latency_ms": 268.65340000040305,
+        "case_count": 5,
+        "failures_by_tag": {
+          "bytes": 2,
+          "exact": 2
+        },
+        "pass_count": 3,
+        "pass_rate": 0.6,
+        "weighted_score": 0.5
+      },
+      "utility": 0.48643134659999954
+    },
+    {
+      "name": "one_pixel_perturbation",
+      "summary": {
+        "avg_latency_ms": 264.6009199999753,
+        "case_count": 5,
+        "failures_by_tag": {
+          "bytes": 2,
+          "exact": 4,
+          "pixels": 2
+        },
+        "pass_count": 1,
+        "pass_rate": 0.2,
+        "weighted_score": 0.125
+      },
+      "utility": 0.07463539908000003
+    }
+  ],
+  "diff": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure01_standard_geometry_bias_prior\\diff_selected.png",
+  "json_report": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure01_standard_geometry_bias_prior\\image-harness-loop-report.json",
+  "markdown_report": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure01_standard_geometry_bias_prior\\image-harness-loop-report.md",
+  "reference": "<USER_HOME>\\AppData\\Local\\Temp\\codex-clipboard-85044554-6d5a-49fb-b216-95d99b22aff4.png",
+  "rendered": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure01_standard_geometry_bias_prior\\rendered_exact.png",
+  "selected_candidate": "byte_exact_renderer",
+  "stats": {
+    "byte_equal": true,
+    "max_pixel_delta": 0,
+    "mse": 0.0,
+    "reference_mode": "RGB",
+    "reference_sha256": "8685cec092b8cd61a93d2ff64b00f7f5e52343781b31b6c463f61bf506bc9f0a",
+    "reference_size": [
+      1536,
+      1024
+    ],
+    "rendered_mode": "RGB",
+    "rendered_sha256": "8685cec092b8cd61a93d2ff64b00f7f5e52343781b31b6c463f61bf506bc9f0a",
+    "rendered_size": [
+      1536,
+      1024
+    ]
+  },
+  "summary_json": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure01_standard_geometry_bias_prior\\image-recreation-summary.json",
+  "summary_markdown": "<USER_HOME>\\Documents\\Codex\\2026-07-01\\new-chat\\outputs\\image_recreation\\figure01_standard_geometry_bias_prior\\image-recreation-summary.md"
+}

@@ -1,0 +1,13 @@
+{
+  "validation_set": "lhs256_validation_points.npz",
+  "validation_digest_sha256": "b978865b5102574e95a93e8a0e6e241d568b274623ab255558d195517e6109a1",
+  "validation_point_count": 256,
+  "k_count": 475,
+  "k_range_h_mpc": [
+    0.0151,
+    2.994
+  ],
+  "target": "residual log-difference against CAMB CDM nonlinear anchor",
+  "primary_metric": "overall_relative_error.p68",
+  "notes": "The validation coordinate set is included. Raw Quijote and KUN generator products are not redistributed in this package."
+}

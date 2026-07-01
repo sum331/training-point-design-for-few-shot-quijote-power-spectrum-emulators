@@ -1,0 +1,27 @@
+{
+  "docx": "<PROJECT_ROOT>\\versions\\z2quijote\\docs\\manuscript_word\\z2quijote_full_manuscript_20260702_mnras_hardfix.docx",
+  "pdf": "<PROJECT_ROOT>\\versions\\z2quijote\\docs\\manuscript_word\\z2quijote_full_manuscript_20260702_mnras_hardfix_word_export.pdf",
+  "pdf_pages": 23,
+  "equations_numbered": 102,
+  "alt_text_count": 13,
+  "local_path_residue_count": 0,
+  "figure_caption_sequence": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "has_author_placeholder": true,
+  "data_availability_has_public_repository": true,
+  "markdown": "<PROJECT_ROOT>\\versions\\z2quijote\\docs\\manuscript_word\\z2quijote_full_manuscript_20260702_mnras_hardfix.md",
+  "updated_at_utc": "2026-07-01T17:30:30.539545+00:00"
+}

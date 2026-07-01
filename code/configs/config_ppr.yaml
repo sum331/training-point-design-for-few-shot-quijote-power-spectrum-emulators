@@ -1,0 +1,99 @@
+project_root: .
+random_seed: 20260604
+
+parameter_space:
+  name: quijote_csstA_matched_box_k001_3
+  theta_names:
+    - Omega_m
+    - Omega_b
+    - h
+    - n_s
+    - A
+  theta_bounds:
+    Omega_m: [0.24, 0.40]
+    Omega_b: [0.04, 0.06]
+    h: [0.60, 0.80]
+    n_s: [0.92, 1.00]
+    A: [1.7, 2.5]
+
+k_grid:
+  k_min: 0.01
+  k_max: 3.0
+  k_count: 475
+  spacing: geomspace
+  low_k_max: 0.07
+  mid_k_max: 0.5
+  band_edges: [0.07, 0.5, 1.0]
+  band_labels: [low, mid, focus_high, tail]
+  band_counts: [162, 164, 57, 92]
+
+sources:
+  truth:
+    kind: quijote_truth_generator
+    generator_path: data/source_data/v2_quijote/artifacts/quijote/gp_surrogates/quijote_bsq_z0_full_directlogpk_truth_generator.pkl
+    device: auto
+  anchor:
+    kind: quijote_hmcode2020
+    matter_power_var: delta_cdm
+    halofit_version: mead2020
+    fixed_w0: -1.0
+    fixed_wa: 0.0
+    fixed_mnu: 0.0
+    reference_as: 2.1e-9
+  training_target: logdiff
+  power_eps: 1.0e-12
+
+potential_weighting:
+  enabled: false
+  band_edges: [0.07, 0.5, 1.0]
+  band_weights: [0.30, 1.35, 1.30, 1.05]
+  normalize_mean: true
+
+lofi_design:
+  particles: 32
+  initial_sampling: sobol
+  jitter: 0.002
+  dt: 0.04
+  damping: 0.86
+  max_steps: 160
+  min_steps: 40
+  convergence_tol: 5.0e-5
+  finite_difference_eps: 0.01
+  potential_force_cap: 0.045
+  repulsion:
+    enabled: true
+    strength: 0.018
+    length_scale: 0.18
+    softening: 0.03
+    nearest_neighbors: 24
+    force_cap: 0.035
+    metric: gp_lengthscale
+    metric_length_scales:
+    metric_scale_floor: 0.05
+    metric_scale_ceiling: 20.0
+    adaptive_to_potential: true
+    adaptive_min_multiplier: 0.25
+    adaptive_power: 1.0
+  boundary:
+    margin: 0.06
+    strength: 0.08
+    force_cap: 0.09
+    hard_clip_margin_fraction: 0.75
+
+potential_mapping:
+  variance_gain: 1.0
+  variance_power: 1.0
+  variance_soft_cap:
+  rank_body_enabled: true
+  rank_body_quantile: 0.68
+  rank_body_width: 0.36
+  rank_body_floor: 0.25
+  rank_body_mix: 0.65
+
+lofi_gp:
+  pca_components: 16
+  gp_alpha: 1.0e-8
+  gp_n_restarts_optimizer: 0
+  intrinsic_noise_mode: provided_or_floor
+  intrinsic_noise_floor: 1.0e-6
+  variance_fusion: sum

@@ -1,0 +1,223 @@
+project_root: .
+device: auto
+device_ids: [0]
+
+sampling:
+  initial_sobol_points: 64
+  iterations: 64
+  batch_size: 1
+
+representation:
+  anchor_mode: hmcode2020
+  transform_family: logdiff
+
+grids:
+  k_min: 0.01
+  k_max: 3.0
+  low_k_max: 0.07
+  mid_k_max: 0.5
+  low_k_fraction: 0.1
+  mid_k_fraction: 0.35
+  high_k_fraction: 0.55
+  high_k_min: 0.5
+  high_k_max: 3.0
+  k_eval_size: 10000
+  k_work_size: 10000
+
+dynamic_preprocessing:
+  update_k_grid: false
+  weight_gamma: 0.7
+  weight_rho: 0.25
+  weight_min: 1.0e-8
+  weight_max: 1.8
+  band_weight_balance_mode: core_posterior_variance
+  core_band_indices: [1, 2, 3]
+  core_error_good: 0.0035
+  core_error_bad: 0.006
+  core_gate_floor: 0.15
+  core_gate_ceiling: 0.85
+  core_priority: [0.30, 1.35, 1.30, 1.05]
+  release_priority: [0.45, 1.25, 1.20, 1.10]
+  error_signal_eta: 0.25
+  posterior_variance_probe_size: 512
+  posterior_variance_seed_offset: 9173
+  posterior_variance_gamma: 0.5
+  posterior_variance_eta: 0.35
+  band_weight_prior: [0.30, 1.35, 1.30, 1.05]
+  weight_prior_eta: 0.35
+
+m3:
+  coverage_mode: hull_domain_hybrid
+  domain_support_point_count: 384
+  domain_top_k: 256
+  domain_score_scale: 1.0
+  representation_band_weights: [0.30, 1.35, 1.30, 1.05]
+  band_weight_min: 1.0e-8
+  acquisition_density_weight_power: 0.5
+  acquisition_density_weight_floor: 0.15
+  imse_rerank_top_k: 256
+  imse_probe_count: 512
+  imse_probe_seed_offset: 27183
+  imse_rerank_mode: p68_soft
+  acquisition_p68_set_rerank_top_k: 256
+  acquisition_p68_set_rerank_score_ratio: 0.995
+  acquisition_p68_set_rerank_risk_mode: validation_probe_shell
+  acquisition_p68_set_rerank_band_weights: [0.30, 1.35, 1.30, 1.05]
+  acquisition_p68_set_rerank_acq_weight: 1.0
+  acquisition_p68_set_rerank_p68_weight: 1.0
+  acquisition_p68_set_rerank_spacefill_weight: 0.25
+  acquisition_p68_set_rerank_boundary_weight: 0.30
+  acquisition_p68_set_rerank_boundary_threshold: 0.08
+  acquisition_p68_set_rerank_boundary_target_fraction: 0.15
+  acquisition_p68_validation_probe_size: 256
+  acquisition_p68_validation_probe_focus_k_min: 0.01
+  acquisition_p68_validation_probe_focus_k_max: 3.0
+  acquisition_p68_validation_probe_shell_width: 0.15
+  acquisition_p68_validation_probe_min_weight: 0.05
+  repr_dirichlet_probe_count: 8
+  stage0_chunk_size: 6144
+  hierarchical_stage1_refine_fraction: 0.25
+  hierarchical_stage2_refine_fraction: 1.0
+  hierarchical_stage2_starts_per_simplex_refine: 8
+  stage3_refine_fraction: 0.03
+  polish_starts_per_simplex_refine: 48
+  stage3_qmc_top_k: 0
+  stage3_qmc_sample_count: 4096
+  stage3_qmc_chunk_size: 7168
+  chunk_size: 6144
+
+# This config intentionally keeps the repository's default CAMB 8D theta_bounds
+# untouched. Quijote's 5D parameter space is isolated under extensions.quijote.
+extensions:
+  quijote:
+    enabled: true
+    parameter_space: quijote_bsq5
+    parameter_space_variant: quijote_bsq5_tight10_k001_3
+    cache_prefix: quijote_bsq5_tight10_k001_3
+    theta_names:
+      - Omega_m
+      - Omega_b
+      - h
+      - n_s
+      - sigma_8
+    theta_bounds:
+      Omega_m: [0.14, 0.46]
+      Omega_b: [0.026, 0.074]
+      h: [0.54, 0.86]
+      n_s: [0.84, 1.16]
+      sigma_8: [0.64, 0.96]
+    runtime_cache_root: artifacts/quijote/runtime_cache_tight10_k001_3
+    raw_root: artifacts/quijote/raw/Pk/matter/BSQ
+    params_file: artifacts/quijote/raw/BSQ_params.txt
+    power_file_name: Pk_CDM_z=0.000.dat
+    bank_path: data/source_data/raw_bank/artifacts/quijote/cache/quijote_bsq_z0_bank.npz
+    bank_metadata_path: data/source_data/raw_bank/artifacts/quijote/cache/quijote_bsq_z0_bank.json
+    bank_manifest_path: data/source_data/raw_bank/artifacts/quijote/cache/quijote_bsq_z0_bank_manifest.csv
+    surrogate_path: data/source_data/v2_quijote/artifacts/quijote/gp_surrogates/quijote_bsq_z0_full_directlogpk_truth_generator.pkl
+    legacy_512_surrogate_path: data/source_data/v2_quijote/artifacts/quijote/gp_surrogates/quijote_bsq_z0_gp.pkl
+    truth_generator_path: data/source_data/v2_quijote/artifacts/quijote/gp_surrogates/quijote_bsq_z0_full_directlogpk_truth_generator.pkl
+    truth_generator_device: auto
+    truth_generator_role: downstream_nonlinear_truth_oracle
+    truth_generator_training_target: direct_logpk
+    truth_generator_linear_anchor_inside_generator: false
+    truth_generator_k_trust_max: 3.0
+    truth_generator_k_policy: native_grid_no_extrapolation
+    truth_generator_evaluation_k_min: 0.01
+    truth_generator_k_min: 0.00889964122325182
+    truth_generator_k_max: 2.993929147720337
+    truth_generator_k_bin_count: 476
+    truth_generator_output_k_policy: dense_target_grid_allowed_no_extrapolation
+    truth_generator_output_k_interpolation: logk_pchip_on_generator_logpk
+    truth_generator_output_k_min: 0.01
+    truth_generator_output_k_max: 3.0
+    truth_generator_output_k_count: 10000
+    truth_generator_output_k_spacing: piecewise_logspace
+    truth_generator_output_k_density_reference: camb_storage_grid_10000_bins_over_0p01_to_10
+    truth_generator_output_k_density_points_per_decade: 3333.3333333333335
+    truth_generator_output_k_decades: 2.4771212547196626
+    truth_generator_output_k_formula: "allocate four log-spaced bands as [1000,3500,3000,2500] over [0.01-0.07;0.07-0.5;0.5-1;1-3]"
+    truth_generator_output_k_band_fractions:
+      frozen_low: 0.1
+      mid: 0.35
+      focus_high: 0.3
+      tail: 0.25
+    truth_generator_output_k_bands:
+      frozen_low:
+        expression: "0.01 <= k < 0.07"
+        count: 1000
+        k_min: 0.01
+        k_max: 0.07
+      mid:
+        expression: "0.07 <= k < 0.5"
+        count: 3500
+        k_min: 0.07
+        k_max: 0.5
+      focus_high:
+        expression: "0.5 <= k < 1.0"
+        count: 3000
+        k_min: 0.5
+        k_max: 1.0
+      tail:
+        expression: "1.0 <= k <= 3.0"
+        count: 2500
+        k_min: 1.0
+        k_max: 3.0
+    truth_generator_k_bands:
+      low:
+        expression: "k < 0.08"
+        count: 11
+        k_min: 0.01507912203669548
+        k_max: 0.07827860862016678
+      mid:
+        expression: "0.08 < k < 0.8"
+        count: 114
+        k_min: 0.08470398932695389
+        k_max: 0.7947896718978882
+      high:
+        expression: "0.8 < k <= 3.0"
+        count: 350
+        k_min: 0.8010491132736206
+        k_max: 2.993929147720337
+    redshift: 0.0
+    redshift_label: "0.000"
+    space: real
+    field: CDM
+    anchor_provider: camb_cdm_hmcode2020_sigma8_calibrated
+    hmcode2020_anchor_halofit_version: mead2020
+    fixed_budget_initial_policy: custom_then_sobol_tail
+    initial_training_theta_path: artifacts/quijote/initial_designs/r2v2_cdm_logdiff_rankbody_joint_best64_20260603.npz
+    initial_training_theta_key: theta_raw
+    initial_training_theta_space: raw
+    initial_training_label: r2v2_cdm_logdiff_rankbody_joint_best64_20260603
+    initial_training_manifest_path: artifacts/quijote/initial_designs/r2v2_cdm_logdiff_rankbody_joint_best64_20260603.json
+    hmcode2020_anchor_fixed_w0: -1.0
+    hmcode2020_anchor_fixed_wa: 0.0
+    hmcode2020_anchor_fixed_mnu: 0.0
+    hmcode2020_anchor_reference_as: 2.1e-9
+    linear_anchor_provider: quijote_official_linear_svgp_generator
+    linear_power_file_name: Pk_mm_z=0.000.txt
+    linear_normfac_file_name: Normfac.txt
+    linear_apply_normfac: true
+    linear_power_source_template: Linear_Pk/BSQ/{simulation_id}/Pk_mm_z=0.000.txt
+    linear_generator_path: data/source_data/v2_quijote/artifacts/quijote/gp_surrogates/quijote_bsq_z0_official_linear_directlogpk_generator.pkl
+    linear_generator_role: downstream_linear_anchor_generator
+    linear_generator_training_target: direct_logpk
+    linear_generator_source: quijote_official_linear_pk_bsq
+    linear_generator_k_policy: official_linear_grid_interpolated_to_output_grid
+    linear_generator_source_k_bin_count: 400
+    linear_generator_source_k_min: 2.0e-5
+    linear_generator_source_k_max: 10.000000000000012
+    linear_generator_output_k_alignment: truth_generator_output_k_grid
+    linear_generator_device: auto
+    linear_anchor_reference_as: 2.1e-9
+    train_size: 512
+    train_seed: 20260513
+    pca_components: 12
+    gp_alpha: 1.0e-8
+    normalize_y: true
+    gp_n_restarts_optimizer: 0
+    constant_value: 1.0
+    constant_value_bounds: [1.0e-4, 1.0e4]
+    length_scale_initial: 0.2
+    length_scale_bounds: [5.0e-3, 3.0e2]
+    power_eps: 1.0e-12

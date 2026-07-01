@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+title: "Training-point design for few-shot Quijote power-spectrum emulators using a standard-geometry bias field and active learning"
+message: "If you use this reproducibility package, please cite the accompanying manuscript."
+type: software
+authors:
+  - name: "Author list to be finalized"
+date-released: "2026-07-02"
+repository-code: "https://github.com/sum331/training-point-design-for-few-shot-quijote-power-spectrum-emulators"

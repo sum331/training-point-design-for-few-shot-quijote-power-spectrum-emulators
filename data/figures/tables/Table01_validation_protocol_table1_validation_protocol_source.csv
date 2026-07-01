@@ -1,0 +1,10 @@
+item,specification
+Truth data,Quijote CDM nonlinear matter power spectra at \(z=0\).
+Parameter space,"Five-dimensional box \(x=(\Omega_m,\Omega_b,h,n_s,A)\); bounds: $\Omega_m$: 0.24--0.40, $\Omega_b$: 0.04--0.06, $h$: 0.60--0.80, $n_s$: 0.92--1.00, $A$: 1.70--2.50."
+Training target,"Residual-anchor target \(r_Q(\theta,k)=\log P_Q^{\rm nl}(\theta,k)-\log P_{\rm anchor}^{\rm CDM,nl}(\theta,k)\); anchor: CAMB CDM nonlinear spectrum."
+\(k\)-grid,"475 Quijote-source bins, actual range \(0.01508\le k\le 2.99393\,h\,{\rm Mpc}^{-1}\); band partition: low: 9 bins; mid: 69 bins; focus high: 79 bins; tail: 318 bins."
+Validation set,LHS validation set with 256 held-out points in the same parameter box; the same \(\theta\) set and \(k\)-grid are used for all reported comparisons.
+Compared designs,Main result: this method with 64 Quijote points versus Sobol64. Cold-start ablation: PPR32 versus Sobol32 only.
+Emulator,Identical residual-anchor PCA-GP architecture for every compared design.
+Primary metric,"\(e(\theta,k)=|\exp(\widehat r_Q(\theta,k)-r_Q(\theta,k))-1|\); overall \(p68=Q_{0.68}(e_{j,m}\mid j=1,\ldots,256,\;m=1,\ldots,475)\)."
+Reported curves,"\(p68(k_m)=Q_{0.68}(e_{j,m}\mid j=1,\ldots,256)\), plus band-wise \(p68\)."

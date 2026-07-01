@@ -1,0 +1,37 @@
+{
+  "created_at_utc": "2026-07-01T18:15:04.545358+00:00",
+  "purpose": "Machine-readable summary for mechanism-attribution ablations.",
+  "validation_digest_sha256": "b978865b5102574e95a93e8a0e6e241d568b274623ab255558d195517e6109a1",
+  "validation_point_count": 256,
+  "k_count": 475,
+  "fields": [
+    "method_name",
+    "condition",
+    "seed",
+    "training_set_path",
+    "training_set_sha256",
+    "validation_set_digest",
+    "validation_point_count",
+    "k_count",
+    "target_kind",
+    "overall_p50",
+    "overall_p68",
+    "overall_p90",
+    "overall_p95",
+    "overall_p98",
+    "overall_mean",
+    "overall_max",
+    "band_low_p68",
+    "band_mid_p68",
+    "band_focus_high_p68",
+    "band_tail_p68",
+    "band_all_p68",
+    "source_condition_summary"
+  ],
+  "notes": [
+    "Some condition summaries did not retain p90 and p98. Missing values are kept as NaN rather than reconstructed.",
+    "The primary paper metric is overall_p68."
+  ],
+  "results_csv": "data/ablation/ablation_results.csv",
+  "condition_count": 8
+}

@@ -1,0 +1,47 @@
+{
+  "reference_size": 32768,
+  "design_count": 900,
+  "accepted_total": 780665,
+  "inside_total": 4773775,
+  "accepted_pair_fraction": 0.026471116807725695,
+  "inside_pair_fraction": 0.1618711683485243,
+  "accepted_count_quantiles": {
+    "q00": 0.0,
+    "q10": 0.0,
+    "q25": 0.0,
+    "q50": 0.0,
+    "q75": 19.0,
+    "q90": 109.0,
+    "q95": 137.0,
+    "q99": 162.0,
+    "q100": 211.0
+  },
+  "inside_count_quantiles": {
+    "q00": 0.0,
+    "q10": 0.0,
+    "q25": 0.0,
+    "q50": 12.0,
+    "q75": 220.0,
+    "q90": 573.0,
+    "q95": 655.0,
+    "q99": 719.3299999999981,
+    "q100": 813.0
+  },
+  "nonzero_accepted_fraction": 0.406951904296875,
+  "ge10_accepted_fraction": 0.285125732421875,
+  "ge20_accepted_fraction": 0.249664306640625,
+  "thresholds": {
+    "tau_lambda": 0.16,
+    "h_min": 0.3903509184060011,
+    "h_max": 0.5265704600502662,
+    "kappa_max": 24.573921112709805,
+    "boundary_min": 0.02
+  },
+  "parameters": {
+    "reference_size": 32768,
+    "design_size": 64,
+    "design_count": 900,
+    "tau_lambda": 0.16,
+    "sampler": "mixed"
+  }
+}

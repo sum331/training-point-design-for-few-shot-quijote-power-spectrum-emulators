@@ -1,0 +1,128 @@
+{
+  "bias_run_dir": "data\\standard_geometry_bias\\bias_m32768_n64_s900_tau016_k475_20260627T164634",
+  "source_bias_field": "data\\standard_geometry_bias\\bias_m32768_n64_s900_tau016_k475_20260627T164634\\standard_geometry_bias_field.npz",
+  "reference_size": 32768,
+  "usable_support_points": 9343,
+  "model_parameters": {
+    "min_count": 10,
+    "high_confidence_count": 20,
+    "neighbors": 96,
+    "fallback_neighbors": 160,
+    "length_scale": 0.18
+  },
+  "reference_bias_quantiles": {
+    "q00": 0.0002804765354337616,
+    "q10": 0.00035985034080526,
+    "q25": 0.0003843075643589249,
+    "q50": 0.0004165368360706199,
+    "q68": 0.000445785037337446,
+    "q75": 0.0004606007497427299,
+    "q90": 0.0005069085840395963,
+    "q95": 0.0005275095968871861,
+    "q99": 0.0005629316471767554,
+    "q100": 0.0006186154598234886
+  },
+  "figure8_group_stats": {
+    "sobol32": {
+      "n": 32.0,
+      "mean": 0.5023527145385742,
+      "median": 0.4831085205078125,
+      "p25": 0.25567626953125,
+      "p75": 0.7464675903320312,
+      "fraction_ge_0p68": 0.3125,
+      "fraction_ge_0p90": 0.0625
+    },
+    "ppr32": {
+      "n": 32.0,
+      "mean": 0.5778064727783203,
+      "median": 0.667572021484375,
+      "p25": 0.45824432373046875,
+      "p75": 0.7085647583007812,
+      "fraction_ge_0p68": 0.5,
+      "fraction_ge_0p90": 0.09375
+    },
+    "active32": {
+      "n": 32.0,
+      "mean": 0.47888660430908203,
+      "median": 0.4701995849609375,
+      "p25": 0.294097900390625,
+      "p75": 0.6912612915039062,
+      "fraction_ge_0p68": 0.28125,
+      "fraction_ge_0p90": 0.03125
+    }
+  },
+  "figure10_anchor": {
+    "reference_index": 19906,
+    "theta_unit": [
+      0.0797149259597063,
+      0.8015016680583358,
+      0.3058213470503688,
+      0.2721576998010278,
+      0.8916681781411171
+    ],
+    "theta_raw": [
+      0.252754388153553,
+      0.056030033361166715,
+      0.6611642694100738,
+      0.9417726159840822,
+      2.4133345425128936
+    ],
+    "bias_value": 0.0006186154598234886,
+    "bias_x1e4": 6.186154598234887
+  },
+  "figure10_panels": [
+    {
+      "panel": "a",
+      "param_x": "Omega_m",
+      "param_y": "n_s",
+      "robust_range": 0.00023575143842015448,
+      "p05": 0.00037053382534518357,
+      "p50": 0.0004419672706999604,
+      "p95": 0.000606285263765338
+    },
+    {
+      "panel": "b",
+      "param_x": "Omega_m",
+      "param_y": "Omega_b",
+      "robust_range": 0.00021865072351890384,
+      "p05": 0.0003902151687966004,
+      "p50": 0.00043800293875631606,
+      "p95": 0.0006088658923155042
+    },
+    {
+      "panel": "c",
+      "param_x": "Omega_m",
+      "param_y": "h",
+      "robust_range": 0.00020629078759650476,
+      "p05": 0.00039627166301653123,
+      "p50": 0.00044115691932447305,
+      "p95": 0.000602562450613036
+    },
+    {
+      "panel": "d",
+      "param_x": "Omega_b",
+      "param_y": "h",
+      "robust_range": 0.00019770110700486991,
+      "p05": 0.00041193787731006804,
+      "p50": 0.0005238068287102125,
+      "p95": 0.000609638984314938
+    }
+  ],
+  "bias_summary_digest": "5f4c6c1192ce03a76c09526f212b8a8c564e8a54817518032c7051dd4e13e8d1",
+  "outputs": {
+    "figure8": [
+      "data\\paper_figures\\main_results_20260701\\figure8_bias_quantile_distribution.svg",
+      "data\\paper_figures\\main_results_20260701\\figure8_bias_quantile_distribution.pdf",
+      "data\\paper_figures\\main_results_20260701\\figure8_bias_quantile_distribution.png",
+      "data\\paper_figures\\main_results_20260701\\figure8_bias_quantile_distribution.tiff"
+    ],
+    "figure10": [
+      "data\\paper_figures\\main_results_20260701\\figure10_bias_field_2d_slices.svg",
+      "data\\paper_figures\\main_results_20260701\\figure10_bias_field_2d_slices.pdf",
+      "data\\paper_figures\\main_results_20260701\\figure10_bias_field_2d_slices.png",
+      "data\\paper_figures\\main_results_20260701\\figure10_bias_field_2d_slices.tiff"
+    ],
+    "figure8_source": "data\\paper_figures\\main_results_20260701\\figure8_bias_quantile_source.csv",
+    "figure10_source": "data\\paper_figures\\main_results_20260701\\figure10_bias_field_slices_source.csv"
+  }
+}
