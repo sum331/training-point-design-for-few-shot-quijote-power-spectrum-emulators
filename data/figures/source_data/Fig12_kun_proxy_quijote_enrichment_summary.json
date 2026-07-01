@@ -1,0 +1,26 @@
+{
+  "figure": "Fig12_kun_proxy_quijote_enrichment",
+  "bias_field_run": "data/standard_geometry_bias/",
+  "validation_points": "data/validation/lhs256_validation_points.npz",
+  "n_validation": 256,
+  "difficulty_definition": "per-validation-point p68 over all k of abs relative error for the Sobol32 Quijote emulator",
+  "kun_proxy_definition": "reliability-weighted interpolation of accepted-only standard-geometry KUN bias field, ranked by support quantile",
+  "interpretation": "cold-start design-prior diagnostic, not calibrated point-wise Quijote error estimation",
+  "kun_interpolation_confidence_median": 0.9771943560182565,
+  "kun_interpolation_confidence_min": 0.959547560248403,
+  "spearman_sobol32_cold_start": {
+    "rho": -0.01180406454506652,
+    "p_value": 0.8509179556429112
+  },
+  "spearman_ppr32_improvement_vs_sobol32": {
+    "rho": 0.04303766367791629,
+    "p_value": 0.4929966393139006
+  },
+  "top_quartile_error_threshold": 0.028368195439117574,
+  "top_quantile_0p8_1_top_error_fraction": 0.2727272727272727,
+  "top_quantile_0p8_1_enrichment_lift": 1.0909090909090908,
+  "low_quantile_0_0p2_top_error_fraction": 0.07142857142857142,
+  "high_quantile_ppr32_improvement_median": 0.0007004298288218885,
+  "low_quantile_ppr32_improvement_median": -0.004450589367111065,
+  "source_csv": "data/figures/source_data/Fig12_kun_proxy_quijote_enrichment_source.csv"
+}

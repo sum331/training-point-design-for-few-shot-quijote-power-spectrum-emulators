@@ -1,0 +1,25 @@
+{
+  "updated_at_utc": "2026-07-01T18:43:27.011251+00:00",
+  "docx": "docs/manuscript/z2quijote_full_manuscript_20260702_mnras_hardfix.docx",
+  "pdf": "docs/manuscript/z2quijote_full_manuscript_20260702_mnras_hardfix_word_export.pdf",
+  "inserted_kun_diagnostic": true,
+  "has_public_repo_data_availability": true,
+  "kun_diagnostic_caption_count": 1,
+  "figure_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "local_path_text_hits": 0
+}

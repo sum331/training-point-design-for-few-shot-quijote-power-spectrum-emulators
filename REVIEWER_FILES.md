@@ -26,6 +26,13 @@ Use these paths to audit the manuscript claims.
 - `data/ablation/designs/`
 - `data/ablation/condition_summaries/`
 
+## KUN prior versus Quijote cold-start difficulty
+
+- `figures/Fig12_kun_proxy_quijote_enrichment.png`
+- `data/figures/source_data/Fig12_kun_proxy_quijote_enrichment_source.csv`
+- `data/figures/source_data/Fig12_kun_proxy_quijote_enrichment_summary.json`
+- `code/scripts/plotting/plot_kun_proxy_quijote_enrichment.py`
+
 ## Bias-field construction
 
 - `data/standard_geometry_bias/standard_geometry_bias_summary.json`

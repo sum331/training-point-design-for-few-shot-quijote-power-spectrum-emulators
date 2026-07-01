@@ -15,6 +15,8 @@ This repository contains the public reproducibility package for the manuscript
   condition-level summaries.
 - `data/figures/`: figure source data, tables, figure manifests, and source
   bundles for the schematic figures.
+- `data/figures/source_data/Fig12_kun_proxy_quijote_enrichment_*`: direct
+  diagnostic source data for the KUN prior versus Quijote cold-start difficulty.
 - `figures/`: final manuscript figures in PNG/PDF/SVG formats.
 - `docs/`: manuscript draft, formula sources, and reference inventory.
 - `environment/`: dependency list, environment report, and anchor protocol.

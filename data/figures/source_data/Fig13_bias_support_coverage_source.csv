@@ -1,0 +1,6 @@
+stage_key,stage_label,count,fraction
+reference,Reference grid,32768,1.0
+inside,Inside geometry,22969,0.700958251953125
+finite,Finite bias $c\geq 1$,13335,0.406951904296875
+usable,Usable $c\geq 10$,9343,0.285125732421875
+high_confidence,High confidence $c\geq 20$,8181,0.249664306640625
